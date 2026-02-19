@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ileana Sitavi | Coaching & Training in Basel</title>
+  <meta name="description" content="Coaching, Mental Coaching, Ernährungscoaching und Personal Training in Basel. Klarheit, Struktur und nachhaltige Veränderung – auf Deutsch, Spanisch oder Englisch." />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e2e8f0;
+      --brand:#0ea5a4; /* türkis */
+      --brand2:#0b7285;
+      --soft:#f1f5f9;
+      --card:#ffffff;
+      --shadow: 0 12px 30px rgba(2, 6, 23, .08);
+      --radius: 18px;
+      --max: 1080px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:linear-gradient(180deg, #f8fafc 0%, #ffffff 40%);
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+    header{
+      position:sticky; top:0; z-index:20;
+      background:rgba(255,255,255,.85);
+      backdrop-filter:saturate(160%) blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      height:64px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; text-decoration:none;
+      font-weight:700; letter-spacing:.2px;
+    }
+    .dot{
+      width:12px; height:12px; border-radius:999px; background:var(--brand);
+      box-shadow:0 0 0 6px rgba(14,165,164,.14);
+    }
+    .menu{display:flex; gap:18px; align-items:center}
+    .menu a{font-size:14px; text-decoration:none; color:var(--muted)}
+    .menu a:hover{color:var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px; border-radius:999px; border:1px solid var(--line);
+      background:#fff; text-decoration:none; font-weight:600; font-size:14px;
+    }
+    .btn.primary{
+      background:var(--brand); border-color:var(--brand);
+      color:#fff;
+    }
+    .btn.primary:hover{background:var(--brand2); border-color:var(--brand2)}
+    .btn:hover{transform:translateY(-1px)}
+    .hero{
+      padding:56px 0 18px;
+    }
+    .hero-grid{
+      display:grid; grid-template-columns: 1.15fr .85fr; gap:28px;
+      align-items:center;
+    }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px; border-radius:999px;
+      background:rgba(14,165,164,.10);
+      color:#0b4b4a;
+      font-weight:600; font-size:13px;
+      border:1px solid rgba(14,165,164,.20);
+    }
+    h1{margin:14px 0 10px; font-size:46px; line-height:1.05; letter-spacing:-.6px}
+    .sub{font-size:18px; color:var(--muted); line-height:1.6; margin:0 0 20px}
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin:22px 0 16px}
+    .trust{
+      display:flex; gap:14px; flex-wrap:wrap;
+      color:var(--muted); font-size:13px; margin-top:10px
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .profile{
+      padding:18px;
+      display:flex; gap:16px; align-items:center;
+    }
+    .avatar{
+      width:86px; height:86px; border-radius:20px;
+      background:linear-gradient(135deg, rgba(14,165,164,.22), rgba(14,165,164,.04));
+      border:1px solid rgba(14,165,164,.25);
+      display:flex; align-items:center; justify-content:center;
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+    /* Optional: eigenes Bild einsetzen */
+    .avatar img{width:100%; height:100%; object-fit:cover; display:block}
+    .pname{font-weight:800; margin:0}
+    .ptitle{margin:2px 0 0; color:var(--muted); font-size:14px}
+    .badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+    .badge{
+      font-size:12px; padding:6px 10px; border-radius:999px;
+      background:var(--soft); border:1px solid var(--line); color:var(--muted)
+    }
+    section{padding:52px 0}
+    .section-title{
+      font-size:30px; letter-spacing:-.3px; margin:0 0 8px
+    }
+    .section-sub{
+      margin:0 0 22px; color:var(--muted); line-height:1.6
+    }
+    .grid3{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px}
+    .grid2{display:grid; grid-template-columns:repeat(2, 1fr); gap:16px}
+    .box{
+      padding:18px;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:#fff;
+    }
+    .box h3{margin:0 0 8px; font-size:18px}
+    .box p{margin:0; color:var(--muted); line-height:1.6}
+    ul.clean{margin:12px 0 0; padding-left:18px; color:var(--muted); line-height:1.7}
+    .steps{counter-reset:step}
+    .step{
+      padding:18px;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:#fff;
+      position:relative;
+    }
+    .step:before{
+      counter-increment:step;
+      content:counter(step);
+      position:absolute;
+      top:14px; right:14px;
+      width:34px; height:34px; border-radius:999px;
+      background:rgba(14,165,164,.12);
+      border:1px solid rgba(14,165,164,.25);
+      display:flex; align-items:center; justify-content:center;
+      font-weight:800; color:#0b4b4a;
+    }
+    .price{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+      margin-top:10px;
+    }
+    .money{font-size:34px; font-weight:900; letter-spacing:-.5px}
+    .per{color:var(--muted); font-size:13px; margin-bottom:6px}
+    .muted{color:var(--muted)}
+    .faq details{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:14px 16px;
+      background:#fff;
+    }
+    .faq details + details{margin-top:10px}
+    .faq summary{
+      cursor:pointer;
+      font-weight:700;
+      list-style:none;
+    }
+    .faq summary::-webkit-details-marker{display:none}
+    footer{
+      padding:32px 0 46px;
+      border-top:1px solid var(--line);
+      background:#fff;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.6;
+    }
+    .cols{display:grid; grid-template-columns:1.2fr .8fr; gap:18px}
+    .small{font-size:12px}
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 10px; border-radius:999px;
+      background:#fff; border:1px solid var(--line);
+      color:var(--muted); font-size:12px;
+    }
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr; }
+      h1{font-size:38px}
+      .grid3{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      .cols{grid-template-columns:1fr}
+      .menu{display:none}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="#top" aria-label="Start">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Ileana Sitavi</span>
+      </a>
+      <nav class="menu" aria-label="Navigation">
+        <a href="#angebot">Angebot</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#preise">Preise</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="btn primary" href="#kontakt">Kostenloses Erstgespräch</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="kicker">Coaching • Personal Training • Ernährungscoaching • Basel</div>
+          <h1>Klarheit, Struktur und Energie –<br/>für Alltag, Beziehungen und Leistung.</h1>
+          <p class="sub">
+            Ich begleite Menschen in Basel dabei, mentale Stärke aufzubauen, Gewohnheiten nachhaltig zu verändern
+            und Körper & Kopf in Einklang zu bringen – in einer klaren, respektvollen und lösungsorientierten Zusammenarbeit.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#kontakt">Erstgespräch buchen</a>
+            <a class="btn" href="#angebot">Angebot ansehen</a>
+          </div>
+
+          <div class="trust">
+            <span class="pill">Sprachen: DE / ES / EN (IT möglich)</span>
+            <span class="pill">Basel & Online</span>
+            <span class="pill">Selbstzahler (keine Krankenkasse)</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="profile">
+            <div class="avatar" aria-label="Portrait">
+  <img src="portrait.jpg" alt="Ileana Sitavi">
+</div>
+            <div>
+              <p class="pname">Ileana Sitavi</p>
+              <p class="ptitle">Coaching & Training • Basel</p>
+              <div class="badges">
+                <span class="badge">Mental Coaching</span>
+                <span class="badge">Ernährung</span>
+                <span class="badge">Personal Training</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:0 18px 18px;">
+            <div class="box" style="background:linear-gradient(135deg, rgba(14,165,164,.10), rgba(255,255,255,.8));">
+              <h3 style="margin:0 0 6px;">Wobei ich unterstütze</h3>
+              <p class="muted" style="margin:0;">
+                Stress & Überforderung • Selbstvertrauen • Beziehungsthemen • Gewohnheiten • Fokus & Performance • Ernährung & Training
+              </p>
+              <ul class="clean">
+                <li>Praktische Tools statt endloser Theorie</li>
+                <li>Strukturierter Plan + klare nächste Schritte</li>
+                <li>Warm, direkt und professionell</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- ANGEBOT -->
+  <section id="angebot">
+    <div class="wrap">
+      <h2 class="section-title">Angebot</h2>
+      <p class="section-sub">
+        Du bekommst eine klare, alltagstaugliche Begleitung – individuell, vertraulich und zielorientiert.
+        Wir arbeiten im Coaching-Rahmen (keine medizinische Behandlung).
+      </p>
+
+      <div class="grid3">
+        <div class="box">
+          <h3>1) Coaching & Gesprächsbegleitung</h3>
+          <p>
+            Für Klarheit, emotionale Stabilität und bessere Entscheidungen – wenn du feststeckst, dich überfordert fühlst
+            oder wieder mehr Kontrolle über deinen Alltag willst.
+          </p>
+          <ul class="clean">
+            <li>Stress, Grenzen, Selbstwert</li>
+            <li>Beziehungs- & Kommunikationsthemen</li>
+            <li>Gewohnheiten & Prokrastination</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>2) Mental Coaching (Fokus & Performance)</h3>
+          <p>
+            Für Menschen, die viel leisten (Job, Sport, Familie) und mental stabiler, fokussierter und gelassener werden wollen.
+          </p>
+          <ul class="clean">
+            <li>Fokus, Motivation, Routine</li>
+            <li>Nervosität, Druck, Overthinking</li>
+            <li>Performance-Routinen</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>3) Personal Training</h3>
+          <p>
+            Individuelles Training – effizient, sauber aufgebaut und auf deinen Alltag abgestimmt.
+            Ideal, wenn du Fortschritt willst, ohne dich zu überlasten.
+          </p>
+          <ul class="clean">
+            <li>Kraft & Funktionalität</li>
+            <li>Body Composition</li>
+            <li>Trainingsplan + Coaching</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="height:16px"></div>
+
+      <div class="grid2">
+        <div class="box">
+          <h3>4) Ernährungscoaching</h3>
+          <p>
+            Klar, ohne Dogma: Struktur, Sättigung, Energielevel und Routinen, die du langfristig halten kannst.
+          </p>
+          <ul class="clean">
+            <li>Alltagstaugliche Ernährung</li>
+            <li>Meal-Struktur & Planung</li>
+            <li>Mindful Eating & Heisshunger-Strategien</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>5) Kombi-Programm (am effektivsten)</h3>
+          <p>
+            Wenn Kopf & Körper zusammenwirken sollen: Coaching + Training + Ernährung in einem klaren Plan.
+          </p>
+          <ul class="clean">
+            <li>1:1 Begleitung über 4–12 Wochen</li>
+            <li>Messbare Ziele, Reviews, Anpassungen</li>
+            <li>Basel & Online möglich</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABLAUF -->
+  <section id="ablauf">
+    <div class="wrap">
+      <h2 class="section-title">So läuft es ab</h2>
+      <p class="section-sub">
+        Einfach, strukturiert und respektvoll. Du entscheidest das Tempo – ich sorge für Klarheit und Umsetzung.
+      </p>
+
+      <div class="grid3 steps">
+        <div class="step">
+          <h3>Erstgespräch (15–20 Min.)</h3>
+          <p class="muted">Wir klären Ziel, Situation, Erwartungen und ob es fachlich & menschlich passt.</p>
+        </div>
+        <div class="step">
+          <h3>Plan & Fokus</h3>
+          <p class="muted">Du bekommst einen klaren Ansatz: Prioritäten, nächste Schritte, Tools für den Alltag.</p>
+        </div>
+        <div class="step">
+          <h3>Umsetzung & Stabilität</h3>
+          <p class="muted">Regelmässige Sessions, Reviews und Anpassungen – bis es wirklich sitzt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREISE -->
+  <section id="preise">
+    <div class="wrap">
+      <h2 class="section-title">Preise</h2>
+      <p class="section-sub">
+        Transparent und unkompliziert. Alle Angebote sind <strong>Selbstzahler</strong> (keine Abrechnung über Krankenkasse).
+      </p>
+
+      <div class="grid3">
+        <div class="box">
+          <h3>Coaching Session</h3>
+          <div class="price">
+            <div>
+              <div class="money">CHF 140</div>
+              <div class="per">pro 60 Minuten</div>
+            </div>
+            <div class="muted small">Basel oder Online</div>
+          </div>
+          <ul class="clean">
+            <li>1:1 Session</li>
+            <li>Konkrete Tools & nächste Schritte</li>
+            <li>Kurze Zusammenfassung auf Wunsch</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>Personal Training</h3>
+          <div class="price">
+            <div>
+              <div class="money">CHF 120</div>
+              <div class="per">pro 60 Minuten</div>
+            </div>
+            <div class="muted small">Indoor/Outdoor</div>
+          </div>
+          <ul class="clean">
+            <li>Technik, Struktur, Progression</li>
+            <li>Optional: Trainingsplan</li>
+            <li>Optional: Kombi mit Ernährung</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>Kombi-Paket (Empfohlen)</h3>
+          <div class="price">
+            <div>
+              <div class="money">ab CHF 650</div>
+              <div class="per">für 5 Sessions</div>
+            </div>
+            <div class="muted small">Mix aus Coaching/Training</div>
+          </div>
+          <ul class="clean">
+            <li>5× 60 Minuten</li>
+            <li>Individueller Plan</li>
+            <li>Rabatt gegenüber Einzelbuchung</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="muted small" style="margin-top:14px;">
+        Hinweis: Preise sind Vorschläge und können je nach Setting, Dauer (45/60/90 Min.) und Programmlänge angepasst werden.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <h2 class="section-title">FAQ</h2>
+      <p class="section-sub">Die häufigsten Fragen – damit es für dich klar ist.</p>
+
+      <div class="faq">
+        <details>
+          <summary>Ist das Therapie?</summary>
+          <p class="muted">
+            Nein. Das Angebot ist Coaching/Beratung/Training. Es ersetzt keine medizinische oder psychotherapeutische Behandlung
+            und umfasst keine Diagnosen oder Krankheitsbehandlung.
+          </p>
+        </details>
+
+        <details>
+          <summary>Zahlt die Krankenkasse?</summary>
+          <p class="muted">
+            Nein. Die Sessions sind Selbstzahler-Leistungen und werden nicht über die Grundversicherung abgerechnet.
+          </p>
+        </details>
+
+        <details>
+          <summary>In welchen Sprachen sind Sessions möglich?</summary>
+          <p class="muted">
+            Deutsch, Spanisch und Englisch. Italienisch ist je nach Thema möglich.
+          </p>
+        </details>
+
+        <details>
+          <summary>Für wen ist das Angebot nicht geeignet?</summary>
+          <p class="muted">
+            Bei akuten Krisen (z. B. Selbstgefährdung), schweren psychischen Erkrankungen oder Notfällen wende dich bitte an
+            den medizinischen Notdienst (144) oder die Psychiatrische Notfallversorgung. In solchen Fällen ist Coaching nicht passend.
+          </p>
+        </details>
+
+        <details>
+          <summary>Wo finden die Sessions statt?</summary>
+          <p class="muted">
+            In Basel (nach Vereinbarung) oder online via Video-Call. Personal Training je nach Setting indoor/outdoor.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt">
+    <div class="wrap">
+      <h2 class="section-title">Kontakt</h2>
+      <p class="section-sub">
+        Schreib mir kurz dein Ziel und was du dir wünschst. Ich melde mich mit Vorschlägen für ein Erstgespräch.
+      </p>
+
+      <div class="cols">
+        <div class="box">
+          <h3>Direkt anfragen</h3>
+          <p class="muted">E-Mail ist am einfachsten. Alternativ WhatsApp (falls ihr das anbieten wollt).</p>
+          <p style="margin:12px 0 0;">
+            <a class="btn primary" href="mailto:hello@ileanasitavi.com?subject=Anfrage%20Coaching%20Basel&body=Hi%20Ileana%2C%0A%0AMein%20Thema%3A%20...%0AZiel%3A%20...%0AFormat%20(Basel%2FOnline)%3A%20...%0ASprache%3A%20...%0A%0AVielen%20Dank!">E-Mail senden</a>
+            <a class="btn" href="#preise">Preise ansehen</a>
+          </p>
+          <ul class="clean">
+            <li><strong>Ort:</strong> Basel (nach Vereinbarung) / Online</li>
+            <li><strong>Sprachen:</strong> DE / ES / EN</li>
+            <li><strong>Antwortzeit:</strong> i. d. R. innerhalb von 48h</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>Kurzes Kontaktformular</h3>
+          <p class="muted">Dieses Formular ist rein technisch (ohne Server). Für echtes Formular braucht ihr Backend/Provider.</p>
+
+          <form onsubmit="event.preventDefault(); alert('Bitte sende deine Anfrage per E-Mail (Button links).');">
+            <label class="muted small">Name</label><br/>
+            <input required style="width:100%; padding:12px; border-radius:12px; border:1px solid var(--line); margin:6px 0 12px;" />
+            <label class="muted small">E-Mail</label><br/>
+            <input required type="email" style="width:100%; padding:12px; border-radius:12px; border:1px solid var(--line); margin:6px 0 12px;" />
+            <label class="muted small">Worum geht’s?</label><br/>
+            <textarea required rows="5" style="width:100%; padding:12px; border-radius:12px; border:1px solid var(--line); margin:6px 0 12px;"></textarea>
+            <button class="btn primary" type="submit">Absenden</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <strong>Ileana Sitavi</strong><br/>
+        Coaching • Mental Coaching • Ernährungscoaching • Personal Training<br/>
+        Basel & Online • DE / ES / EN
+        <p class="small" style="margin-top:12px;">
+          <strong>Rechtlicher Hinweis:</strong> Diese Website beschreibt Coaching- und Trainingsleistungen. Sie stellen keine medizinische
+          oder psychotherapeutische Behandlung dar, ersetzen keine Diagnose und sind nicht für Notfälle geeignet.
+        </p>
+      </div>
+      <div>
+        <strong>Impressum / Datenschutz</strong><br/>
+        <span class="small">
+          Bitte ergänzt hier eure Firmenangaben (Name, Adresse in CH, Kontakt, ggf. UID) und eine kurze Datenschutzerklärung
+          (Kontakt per E-Mail, Hosting, Analytics falls genutzt).
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+q
